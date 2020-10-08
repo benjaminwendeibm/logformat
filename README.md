@@ -30,6 +30,8 @@ Assign execute permission on the script:
 chmod +x /usr/local/bin/logformat
 ```
 
+On Windows you would need to create a batch file containing the call to node and put that into a directory that is part of the PATH environment variable.
+
 ## Usage
 
 The Log Formatter will read input it's from stdin.

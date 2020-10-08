@@ -49,19 +49,13 @@ function prop(o, name, name2) {
 function parseLine(line) {
   try {
     if(line.trim().startsWith("{") && line.trim().endsWith("}")) {
-      var o = JSON.parse(line.trim());
-      // do not unwrap filebeat entries as this would repeat logs
-      //if(o['@metadata'] && o.message && o.message.startsWith("{") && o.message.endsWith("}")) {
-      //  o = JSON.parse(o.message);
-      //}
-      return o;
+      return JSON.parse(line.trim());
     }
-    return null;
   }
   catch(e) {
     return null;
   }
-
+  return null;
 }
 
 /*
