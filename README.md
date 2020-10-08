@@ -16,7 +16,7 @@ will be formatted to
 
 Create a text file in `/usr/local/bin` directory:
 ```console
-vi /usr/local/bin/logformt
+vi /usr/local/bin/logformat
 ```
 
 Type in following script to invoke Node.js with the Log-Formatter:
@@ -35,12 +35,15 @@ chmod +x /usr/local/bin/logformat
 The Log Formatter will read input it's from stdin.
 
 Format logs from a file:
+
 `cat ~/server.log | node ~/logformat/main.js`
 
 If you created a shortcut, like suggested:
+
 `cat ~/server.log | logformat`
 
 Print logs of a  Kubernetes pod:
+
 `kubectl logs my-liberty-pod | logformat`
 
 ## Example JSON Log Entries
