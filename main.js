@@ -81,6 +81,9 @@ function processLine(line) {
       console.log(`[${prop(o, "ibm_datetime")}] ${prop(o, "ibm_threadId")} ${prop(o, "ibm_className", "module")}.${prop(o, "ibm_methodName")} ${prop(o, "message")}`)
       return
     }
+    else if (o.type && o.type == "liberty_accesslog") {
+      // ignore this for now
+    }
     else if(o['@metadata']) {
       console.log(`${prop(o, "message")}`)
       return
