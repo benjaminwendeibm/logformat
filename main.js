@@ -113,19 +113,29 @@ function processLine(line) {
 /*
  * Process each line of stdin in an endless loop.
  */
-async function processStdIn(debug) {
+function processStdIn(debug) {
   const rlIn = readline.createInterface({
     input: process.stdin,
     crlfDelay: Infinity
   });
 
   // read from stdin until program ends
-  for await (const line of rlIn) {
+  const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout,
+    terminal: false
+  });
+  
+  rl.on('line', (line) => {
     if(debug == true) {
       console.log("RAW: " + line)
     }
     processLine(line);
-  }
+  });
+  
+  rl.once('close', () => {
+       // end of input
+   });
 }
 
 // trigger stdin processing

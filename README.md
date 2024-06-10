@@ -2,8 +2,6 @@
 
 A simple Node.js script that helps to format IBM Liberty JSON Log Entries into classic human-readable Logs.
 
-The script requires Node.js 7.6, as it uses the async and await language constructs.
-
 ```json
 {"@timestamp":"2020-10-05T09:01:18.337Z","@metadata":{"beat":"filebeat","type":"_doc","version":"7.0.1"},"host":{"name":"workflow-designer-ums-deployment-7fd4d68d7-mb7cs"},"agent":{"ephemeral_id":"a82b2d8c-025b-4328-ac37-66921bdaf569","hostname":"workflow-designer-ums-deployment-7fd4d68d7-mb7cs","id":"a2fe592c-f9f0-4c65-a136-f677f2524640","version":"7.0.1","type":"filebeat"},"log":{"offset":43805,"file":{"path":"/logs/application/liberty-message.log"}},"message":"{\"type\":\"liberty_message\",\"host\":\"workflow-designer-ums-deployment-7fd4d68d7-mb7cs\",\"ibm_userDir\":\"\\/opt\\/ibm\\/wlp\\/usr\\/\",\"ibm_serverName\":\"ums\",\"message\":\"CWWKF0011I: The server1 server is ready to run a smarter planet. The server1 server started in 126.196 seconds.\",\"ibm_threadId\":\"00000025\",\"ibm_datetime\":\"2020-10-05T09:01:17.338+0000\",\"ibm_messageId\":\"CWWKF0011I\",\"module\":\"com.ibm.ws.kernel.feature.internal.FeatureManager\",\"loglevel\":\"AUDIT\",\"ibm_sequence\":\"1601888477338_000000000004E\"}","log-type":"application","input":{"type":"log"},"app_id":"","ecs":{"version":"1.0.0"}}
 ```
